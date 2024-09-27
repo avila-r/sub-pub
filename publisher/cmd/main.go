@@ -33,7 +33,9 @@ func main() {
 	})
 
 	app.Post("/", func(c *fiber.Ctx) error {
-		data := struct{ Message string }{}
+		data := struct {
+			Message string `json:"message"`
+		}{}
 
 		if err := c.BodyParser(&data); err != nil {
 			return err

@@ -14,7 +14,9 @@ var (
 	app_url    = os.Getenv("SERVER_URL")
 	queue_url  = os.Getenv("QUEUE_URL")
 	queue_name = os.Getenv("QUEUE_NAME")
-	database   = struct{ Data []any }{}
+	database   = struct {
+		Data []any `json:"data"`
+	}{}
 )
 
 func main() {
